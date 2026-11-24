@@ -16,7 +16,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://www.casalavorocomprehensivehr.com";
+// Must be the URL THIS app is deployed at, or og:image will point to the wrong host.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000");
 const title = "casalavorocomprehensivehr";
 const description =
   "CasaLavoro Comprehensive HR — your employee hub for OKRs, attendance, appraisals and more.";
