@@ -2,9 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
-const poppins = Poppins({ subsets: ['latin'], weight: ['400','500','600','700'], variable: '--font-poppins' });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,9 +28,9 @@ const siteUrl =
     : process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
       : "http://localhost:3000");
-const title = "casalavorocomprehensivehr";
+const title = "casolavorocomprehensivehr";
 const description =
-  "CasaLavoro Comprehensive HR — your employee hub for OKRs, attendance, appraisals and more.";
+  "Casolavoro Comprehensive HR — your employee hub for OKRs, attendance, appraisals and more.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
